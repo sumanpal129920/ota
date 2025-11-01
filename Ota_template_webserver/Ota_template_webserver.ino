@@ -92,6 +92,8 @@ void doOTA()
 // ================== SETUP ==================
 void setup() {
   Serial.begin(115200);
+  //Write memory to reset version
+  writeStoredVersion(0);
   delay(1000);
 
   connectWiFi();
@@ -109,7 +111,6 @@ void setup() {
 // ================== LOOP ==================
 void loop() {
   // ======== Your main program ========
-  Serial.print("FW Version: ");
-  Serial.println(latestVer);
-  delay(500);
+  Serial.println("OTA Boot loader code");
+  delay(5000);
 }
